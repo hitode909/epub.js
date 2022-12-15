@@ -860,7 +860,7 @@ class DefaultViewManager {
 
 		if(!this.settings.fullsize) {
 			if(x) this.container.scrollLeft += x * dir;
-			if(y) this.container.scrollTop += y;
+			if(y) this.container.scrollTop += Math.min(y, this.container.scrollHeight);
 		} else {
 			window.scrollBy(x * dir, y * dir);
 		}
